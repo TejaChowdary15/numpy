@@ -1,0 +1,109 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "a02df45f-5933-4e35-b0ac-669333e3d0d4",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def remove_punc(input_text):\n",
+    "    punctuation_marks=['.',',','!','?','(',')','{','}','&','#','$','[',']','~','`','*','^','/','\"','\"',]\n",
+    "    output_text=\"\"#remove punctuation using a for loop\n",
+    "    for char in input_text:\n",
+    "        if char not in punctuation_marks:\n",
+    "            output_text+=char\n",
+    "    return output_text"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "4eece406-f36d-483a-9e35-3ce17de88233",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'Hello How are you'"
+      ]
+     },
+     "execution_count": 15,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "remove_punc('''Hello!, \"How are you?\"''')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "3fd47a53-0a6f-42e2-a3a6-f9038211d8c0",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def remove_stopwords(input_text):\n",
+    "    stop_words =[\"is\",\"and\",\"the\",\"a\",\"an\",\"in\",\"on\",\"at\",\"this\",\"there\",\"for\",\"it\",\"was\"]\n",
+    "    words = input_text.split()\n",
+    "    filtered_words = []\n",
+    "    for word in words:\n",
+    "        if word.lower() not in stop_words:\n",
+    "            filtered_words.append(word)\n",
+    "    output_text = ' '.join(filtered_words)\n",
+    "    return(output_text)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "id": "ff3d23ad-f04d-46bf-8171-72e7e4c7226f",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'movie good hit'"
+      ]
+     },
+     "execution_count": 27,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "remove_stopwords(\"The movie was good and it is a hit \")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f20bd836-4e88-4875-a1cd-3237a1dffa80",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python [conda env:base] *",
+   "language": "python",
+   "name": "conda-base-py"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.11.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
